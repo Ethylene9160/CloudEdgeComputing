@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Transmissioner">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dependencies/Transmissioner.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
