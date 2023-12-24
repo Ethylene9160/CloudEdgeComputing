@@ -1,1 +1,1 @@
-# Clout Edge Cmputing
+# Clout Edge Computing
