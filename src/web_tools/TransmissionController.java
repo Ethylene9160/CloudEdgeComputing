@@ -39,15 +39,22 @@ public class TransmissionController implements Closeable{
     public TransmissionController(Socket targetSocket, TransmissionListener listener) throws IOException, NullPointerException{
         if(targetSocket == null) throw new NullPointerException("The socket has not been initialized");
         if(listener == null) throw new NullPointerException("The listener has not been initialized");
-
+        System.out.println("start init TransmissionController");
         this.targetSocket = targetSocket;
+        System.out.println("target socket over");
         this.listener = listener;
+        System.out.println("listener over");
 
         this.sender = new Sender(this.targetSocket.getOutputStream(), listener);
+        System.out.println("sender over");
         this.receiver = new Receiver(this.targetSocket.getInputStream(), listener);
-
+        System.out.println("receiver over");
+        System.out.println("finished sender and receiver.");
+        System.out.println("init receivingThread");
         this.receivingThread = new Thread(this.receiver);
+
         receivingThread.start();
+        System.out.println("start receiving");
 
         listener.onTransmissionStart();
     }
